@@ -5,8 +5,7 @@ from .. import models
 
 
 def get_all(db: Session = Depends(database.get_db)):
-    movie = db.query(models.Movie).all()
-    return movie
+    return db.query(models.Movie).all()
 
 
 def create(request: schemas.Movie, db: Session = Depends(database.get_db)):
